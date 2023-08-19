@@ -40,7 +40,7 @@ public class WishResource {
 	public ResponseEntity<List<WishDTO>> findAllByIdCustomer(@PathVariable String idCustomer) {
 
 		List<Wish> wishList = service.findAllByIdCustomer(idCustomer);
-		List<WishDTO> wishDTOList = wishList.stream().map(x -> new WishDTO(x)).collect(Collectors.toList());
+		List<WishDTO> wishDTOList = wishList.stream().map(WishDTO::new).collect(Collectors.toList());
 		return ResponseEntity.ok().body(wishDTOList);
 	}
 	

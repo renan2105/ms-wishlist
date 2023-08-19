@@ -26,8 +26,7 @@ public class WishService {
 	}
 
 	public List<Wish> findAllByIdCustomer(String idCustomer) {
-		List<Wish> wishList = wishRepository.findAllByIdCustomer(idCustomer);
-		return wishList;
+		return wishRepository.findAllByIdCustomer(idCustomer);
 	}
 
 	public Wish addNewWish(Wish wish) {
@@ -46,11 +45,11 @@ public class WishService {
 		delete(wish.getId());
 	}
 
-	public Wish insert(Wish wish) {
+	private Wish insert(Wish wish) {
 		return wishRepository.insert(wish);
 	}
 
-	public void delete(String id) {
+	private void delete(String id) {
 		wishRepository.deleteById(id);
 	}
 

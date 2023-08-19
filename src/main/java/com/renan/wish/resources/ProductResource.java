@@ -20,7 +20,7 @@ public class ProductResource {
 	@RequestMapping(method=RequestMethod.GET)
  	public ResponseEntity<List<ProductDTO>> findAll() {
 		List<Product> productList = service.findAll();
-		List<ProductDTO> productDTOList = productList.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
+		List<ProductDTO> productDTOList = productList.stream().map(ProductDTO::new).collect(Collectors.toList());
 		return ResponseEntity.ok().body(productDTOList);
 	}
 
