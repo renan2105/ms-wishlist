@@ -4,6 +4,7 @@ import com.renan.wish.domain.Product;
 import com.renan.wish.domain.Wish;
 import com.renan.wish.dto.WishDTO;
 import com.renan.wish.repository.WishRepository;
+import com.renan.wish.services.exception.BusinessErrorException;
 import com.renan.wish.services.exception.ExceededLimitWishesException;
 import com.renan.wish.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class WishService {
 	}
 
 	public Wish addNewWish(Wish wish) {
+
+		if(wishRepository.findByIdCustomerAndProductId(wish.getIdCustomer(), wish.getProduct().getId()).isPresent())
+			throw new BusinessErrorException("Wish ja adicionado.");
 
 		if(wishRepository.countByIdCustomer(wish.getIdCustomer()) >= 20)
 			throw new ExceededLimitWishesException("Limite de desejos excedido");
