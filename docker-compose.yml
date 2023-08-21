@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  db:
+    image: mongo:3.4
+    command: mongod --port 27018
+    ports:
+      - '27018:27018'
+    restart: always
+    volumes:
+      - ./_data:/data/db
+  wish-ms:
+    image: renan2105/wish-ms
+    restart: always
+    build: ./wish
+    working_dir: /wish
+    environment:
+       SPRING.DATA.MONGODB.URI: mongodb://localhost:27018/wish
+    ports:
+      - '80:80'
+    command: mvn spring-boot:run
+    depends_on:
+      - db
+networks:
+  wish-network:
+    driver: bridge
