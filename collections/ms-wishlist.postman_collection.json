@@ -15,11 +15,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/customers",
+							"raw": "localhost:80/customers",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "80",
 							"path": [
 								"customers"
 							]
@@ -38,11 +38,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/products",
+							"raw": "localhost:80/products",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "80",
 							"path": [
 								"products"
 							]
@@ -62,7 +62,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCustomer\": \"64dfef8f67bf7340886e36d6\",\r\n    \"product\" : {\r\n        \"id\": \"64dfedbb67bf730b1c9de94f\",\r\n        \"name\": \"Product1\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"idCustomer\": \"64e386a7faf6683828aa52ff\",\r\n    \"product\" : {\r\n        \"id\": \"64e386a8faf6683828aa5302\",\r\n        \"name\": \"Product1\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -70,11 +70,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/wishes/addNewWish",
+							"raw": "localhost:80/wishes/addNewWish",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "80",
 							"path": [
 								"wishes",
 								"addNewWish"
@@ -89,16 +89,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/wishes/findByIdCustomerAndIdProduct/64dfedbb67bf730b1c9de94c/64dfedbb67bf730b1c9de94f",
+							"raw": "localhost:80/wishes/findByIdCustomerAndIdProduct/64e0c9b8962d2d3df66398e2/64e0c9b8962d2d3df66398e5",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "80",
 							"path": [
 								"wishes",
 								"findByIdCustomerAndIdProduct",
-								"64dfedbb67bf730b1c9de94c",
-								"64dfedbb67bf730b1c9de94f"
+								"64e0c9b8962d2d3df66398e2",
+								"64e0c9b8962d2d3df66398e5"
 							]
 						}
 					},
@@ -110,35 +110,36 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/wishes/findAllByIdCustomer/64dfedbb67bf730b1c9de94c",
+							"raw": "localhost:80/wishes/findAllByIdCustomer/64e0c9b8962d2d3df66398e2",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "80",
 							"path": [
 								"wishes",
 								"findAllByIdCustomer",
-								"64dfedbb67bf730b1c9de94c"
+								"64e0c9b8962d2d3df66398e2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "deleteByIdCustomerAndProductId",
+					"name": "removeByIdCustomerAndIdProduct",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/wishes/64dfedbb67bf730b1c9de94c/64dfedbb67bf730b1c9de94f",
+							"raw": "localhost:80/wishes/removeByIdCustomerAndIdProduct/64e0c9b8962d2d3df66398e2/64e0c9b8962d2d3df66398e5",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "80",
 							"path": [
 								"wishes",
-								"64dfedbb67bf730b1c9de94c",
-								"64dfedbb67bf730b1c9de94f"
+								"removeByIdCustomerAndIdProduct",
+								"64e0c9b8962d2d3df66398e2",
+								"64e0c9b8962d2d3df66398e5"
 							]
 						}
 					},
